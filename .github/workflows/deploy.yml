@@ -23,4 +23,4 @@ jobs:
             git pull origin main
             echo "${{ secrets.VPS_PASSWORD }}" | sudo -S cp prometheus/prometheus.yml /etc/prometheus/prometheus.yml
             echo "${{ secrets.VPS_PASSWORD }}" | sudo -S systemctl restart prometheus
-            echo "${{ secrets.VPS_PASSWORD }}" | sudo -S docker-compose up -d
+            docker-compose up -d
