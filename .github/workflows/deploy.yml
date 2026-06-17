@@ -21,6 +21,6 @@ jobs:
           script: |
             cd ~/vps-monitoring-stack
             git pull origin main
-            sudo cp prometheus/prometheus.yml /etc/prometheus/prometheus.yml
-            sudo systemctl restart prometheus
-            docker compose up -d
+            echo "${{ secrets.VPS_PASSWORD }}" | sudo -S cp prometheus/prometheus.yml /etc/prometheus/prometheus.yml
+            echo "${{ secrets.VPS_PASSWORD }}" | sudo -S systemctl restart prometheus
+            echo "${{ secrets.VPS_PASSWORD }}" | sudo -S docker compose up -d
