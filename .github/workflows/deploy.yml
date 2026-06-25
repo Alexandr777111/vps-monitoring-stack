@@ -18,6 +18,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{secrets.VPS_PORT}}
           script: |
             cd ~/vps-monitoring-stack
             git pull origin main
